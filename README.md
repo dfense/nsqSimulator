@@ -3,10 +3,11 @@
 - requirements: installed the nsq suite of proudcts
 https://nsq.io/deployment/installing.html
 
-## build instructions
-create new nsqDir
-cd nsqDir
-export GOPATH=$PWD
+```
+## build instructions  
+create new nsqDir  
+cd nsqDir  
+export GOPATH=$PWD  
 
 go get github.com/dfense/nsqSample
 cd github.com/dfense/nsqSample
@@ -34,6 +35,6 @@ Flags:
   -m, --ms=MS    millisecond to wait between sending messages.
       --count=1  total number of messages to send
       --version  Show application version.
-
+```
 
 
