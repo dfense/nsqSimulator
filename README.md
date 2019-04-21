@@ -9,11 +9,12 @@ create new nsqDir
 cd nsqDir  
 export GOPATH=$PWD  
 
-go get github.com/dfense/nsqSample
-cd github.com/dfense/nsqSample
+git clone https://github.com/dfense/nsqSimulator.git $GOPATH/src/github.com/dfense/nsqSimulator
+cd $GOPATH/src/github.com/dfense/nsqSimulator
 dep ensure -update
 
 cd $GOPATH
+rm -rf pkg  //<- TODO have to figure out why dep ensure creates pkg cache...
 go install ./...
 ```
 
