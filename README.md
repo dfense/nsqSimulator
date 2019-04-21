@@ -1,4 +1,6 @@
 # nsqSimulator
+Provides the following independent executable programs below. It will always connect to NSQ on localhost:4150 TCP.
+
 ### A Producer (server)
 creates a topic and populates it with desired number of messages/speed
 
