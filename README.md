@@ -15,9 +15,10 @@ dep ensure -update
 
 cd $GOPATH
 go install ./...
-
+```
 
 *run program to receive usage format*
+```
 $ bin/server --help
 usage: server --ms=MS [<flags>]
 
