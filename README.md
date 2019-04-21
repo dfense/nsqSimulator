@@ -1,4 +1,9 @@
-# nsqSample 
+# nsqSimulator
+### A Producer (server)
+creates a topic and populates it with desired number of messages/speed
+
+### A Consumer (client)
+subscribes to a topic and reads messages from it, at desired rate and total messages to read
 
 ## Pre-requisites
 - installed the nsq suite of proudcts https://nsq.io/deployment/installing.html
