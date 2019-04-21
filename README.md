@@ -1,7 +1,9 @@
 # nsqSample 
 
-- requirements: installed the nsq suite of proudcts
-https://nsq.io/deployment/installing.html
+## Pre-requisites
+- installed the nsq suite of proudcts https://nsq.io/deployment/installing.html
+- golang (version 1.7+ is required)
+- dep (dependency manager)
 
 ```
 ## build instructions  
