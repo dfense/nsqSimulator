@@ -10,10 +10,11 @@ import (
 )
 
 var (
-	clientName    = kingpin.Flag("clientName", "name of client.").Short('c').Required().String()
+	channel       = kingpin.Flag("channel", "name of channel.").Short('c').Required().String()
+	topic         = kingpin.Flag("topic", "name of topic.").Short('t').Required().String()
 	ttlPackets    = kingpin.Flag("ttlPackets", "total number of messages to read").Default("1").Int()
 	timeBetween   = kingpin.Flag("timeBetween", "number of millis between message reads").Default("1").Int()
-	stayConnected = kingpin.Arg("stayConnected", "stay connected after ttlPacketsRead").Bool()
+	stayConnected = kingpin.Flag("stayConnected", "stay connected after ttlPacketsRead").Default("false").Bool()
 )
 
 func main() {
@@ -21,7 +22,8 @@ func main() {
 	kingpin.Parse()
 
 	log.SetLevel(log.DebugLevel)
-	log.Debugf("Client Name: %s\n", *clientName)
+	log.Debugf("Channel Name: %s\n", *channel)
+	log.Debugf("StayConnected %t\n", *stayConnected)
 
 	readPackets := 0
 
@@ -30,7 +32,7 @@ func main() {
 
 	// create a new channel on the "write_test" topic
 	config := nsq.NewConfig()
-	q, _ := nsq.NewConsumer("creeSim", *clientName, config)
+	q, _ := nsq.NewConsumer(*topic, *channel, config)
 
 	// service all messages from channel here. Notification
 	q.AddHandler(nsq.HandlerFunc(func(message *nsq.Message) error {
