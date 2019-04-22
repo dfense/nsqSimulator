@@ -38,14 +38,18 @@ Flags:
       --count=1  total number of messages to send
       --version  Show application version.
 
-$ bin/server --help
-usage: server --ms=MS [<flags>]
+$ bin/client --help
+usage: client --channel=CHANNEL --topic=TOPIC [<flags>]
 
 Flags:
-      --help     Show context-sensitive help (also try --help-long and --help-man).
-  -m, --ms=MS    millisecond to wait between sending messages.
-      --count=1  total number of messages to send
-      --version  Show application version.
+      --help             Show context-sensitive help (also try --help-long and --help-man).
+  -c, --channel=CHANNEL  name of channel.
+  -t, --topic=TOPIC      name of topic.
+      --ttlPackets=1     total number of messages to read
+      --timeBetween=1    number of millis between message reads
+      --stayConnected    stay connected after ttlPacketsRead
+      --version          Show application version.
+
 ```
 
 
