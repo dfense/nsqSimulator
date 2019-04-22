@@ -30,13 +30,14 @@ subscribes to a topic and reads messages from it, at desired rate and total mess
 *run program to receive usage format*
 ```
 $ bin/server --help
-usage: server --ms=MS [<flags>]
+usage: server --topic=TOPIC --ms=MS [<flags>]
 
 Flags:
-      --help     Show context-sensitive help (also try --help-long and --help-man).
-  -m, --ms=MS    millisecond to wait between sending messages.
-      --count=1  total number of messages to send
-      --version  Show application version.
+      --help         Show context-sensitive help (also try --help-long and --help-man).
+  -t, --topic=TOPIC  name of topic.
+  -m, --ms=MS        millisecond to wait between sending messages.
+      --count=1      total number of messages to send
+      --version      Show application version.
 
 $ bin/client --help
 usage: client --channel=CHANNEL --topic=TOPIC [<flags>]
