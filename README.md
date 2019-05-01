@@ -9,21 +9,16 @@ subscribes to a topic and reads messages from it, at desired rate and total mess
 
 ## Pre-requisites
 - installed the nsq suite of proudcts https://nsq.io/deployment/installing.html
-- golang (version 1.7+ is required)
-- dep (dependency manager)
+- golang (version 1.12+ is required)
 
 ```
 ## build instructions  
-<create new nsqUtil somewhere>  
+<create new nsqUtil dir somewhere>  
 <cd nsqUtil> 
-# export GOPATH=$PWD  
+# export GOBIN=$PWD  
 
 # git clone https://github.com/dfense/nsqSimulator.git $GOPATH/src/github.com/dfense/nsqSimulator
-# cd $GOPATH/src/github.com/dfense/nsqSimulator
-# dep ensure -update
-
-# cd $GOPATH
-# rm -rf pkg  //<- TODO have to figure out why dep ensure creates pkg cache...
+# cd src/github.com/dfense/nsqSimulator
 # go install ./...
 ```
 
