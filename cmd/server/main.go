@@ -11,6 +11,8 @@ import (
 var (
 	msBetween = kingpin.Flag("ms", "millisecond to wait between sending messages.").Short('m').Required().Int()
 	count     = kingpin.Flag("count", "total number of messages to send").Default("1").Int()
+	topic     = kingpin.Flag("topic", "topic name").Default("topicname").String()
+	message   = kingpin.Flag("message", "message").Default("message").String()
 )
 
 func main() {
@@ -26,7 +28,7 @@ func main() {
 	// loop for 1000 times
 	for i := 0; i < *count; i++ {
 
-		err := w.Publish("creeSim", []byte("Cree Test Message"))
+		err := w.Publish(*topic, []byte(*message))
 		if err != nil {
 			log.Panic("Could not connect")
 		}
